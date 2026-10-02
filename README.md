@@ -22,3 +22,16 @@ python main.py
 ## Hasil Program
 
 Hasil deteksi disimpan dalam file CSV bernama `hasil_deteksi_tanda_tangan.csv` di dalam folder `hasil/`. File tersebut berisi label asli, rasio foreground, hasil prediksi, dan status benar atau salah.
+
+
+## Mengapa thresholding diperlukan sebelum melakukan analisis keberadaan tanda tangan?
+Thresholding diperlukan untuk memisahkan objek tanda tangan dari latar belakang gambar ijazah. Pada tahap ini, gambar grayscale diubah menjadi citra biner yang terdiri dari piksel hitam dan putih. Dengan begitu, tanda tangan lebih mudah dibedakan dari kertas ijazah.
+
+Hasil thresholding juga memudahkan perhitungan jumlah piksel foreground yang digunakan sebagai salah satu ciri untuk menentukan apakah tanda tangan terdapat pada gambar atau tidak.
+
+# Jawaban Analisis
+
+## Apa masalah yang terjadi jika threshold terlalu tinggi atau terlalu rendah?
+Jika nilai threshold terlalu tinggi, beberapa bagian tanda tangan yang tipis atau kurang jelas dapat hilang karena dianggap sebagai latar belakang. Akibatnya, jumlah piksel foreground menjadi lebih sedikit dan tanda tangan mungkin tidak terdeteksi.
+
+Sebaliknya, jika nilai threshold terlalu rendah, bagian latar belakang, tulisan lain, atau noda pada ijazah dapat ikut dianggap sebagai foreground. Hal ini membuat jumlah piksel foreground bertambah dan dapat menyebabkan sistem salah mengidentifikasi keberadaan tanda tangan.
