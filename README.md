@@ -4,14 +4,6 @@
 
 Program ini digunakan untuk mendeteksi keberadaan tanda tangan pada gambar ijazah menggunakan Python dan OpenCV. Proses deteksi dilakukan melalui pemotongan area tertentu (ROI), konversi gambar ke grayscale, thresholding, dan perhitungan rasio piksel foreground.
 
-## Persiapan
-
-Pastikan Python sudah terinstal di komputer. Buka terminal pada folder proyek, kemudian instal library yang diperlukan:
-
-```bash
-pip install opencv-python numpy pandas
-```
-
 ## Cara Menjalankan Program
 
 1. Buka folder proyek di Visual Studio Code.
@@ -30,10 +22,3 @@ python main.py
 ## Hasil Program
 
 Hasil deteksi disimpan dalam file CSV bernama `hasil_deteksi_tanda_tangan.csv` di dalam folder `hasil/`. File tersebut berisi label asli, rasio foreground, hasil prediksi, dan status benar atau salah.
-
-## Teknologi
-
-* Python
-* OpenCV
-* NumPy
-* Pandas
